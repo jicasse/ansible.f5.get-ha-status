@@ -5,13 +5,16 @@ galaxy_info:
   license: license BSD
   min_ansible_version: 2.7
   platforms:
-   - name: BIGIP
+   - name: EL
      versions:
-     - 12
+     - all
+   - name: Debian
+     versions:
+     - all
   galaxy_tags:
    - f5
    - bigip
-   - network
+   - networking
    - security
    - ha
 dependencies: []
