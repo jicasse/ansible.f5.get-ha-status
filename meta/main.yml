@@ -1,6 +1,6 @@
 galaxy_info:
   author: Jimmy Casse
-  description: Ansible gathering F5 bigip HA information
+  description: Ansible role gathering F5 bigip HA information
   company: J-SEC
   license: license BSD
   min_ansible_version: 2.7
