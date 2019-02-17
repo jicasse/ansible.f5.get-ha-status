@@ -1,0 +1,6 @@
+---
+# defaults file for ansible.f5.get-ha-status
+
+f5_delegate_to: 'localhost'
+f5_validate_certs: 'no'
+

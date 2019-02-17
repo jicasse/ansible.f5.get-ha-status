@@ -1,0 +1,28 @@
+---
+# tasks file for ansible.f5.get-ha-status
+
+- name: Gather BIGIP facts
+  bigip_device_facts:
+   gather_subset: 
+    - device-groups
+    - devices
+   provider:
+    password: "{{ f5_passwd }}"
+    server: "{{ f5_host }}"
+    user: "{{ f5_user }}"
+    validate_certs: "{{ f5_validate_certs }}"
+  delegate_to: "{{ f5_delegate_to }}"
+  register: facts
+
+- name: Set f5_ha_status fact
+  set_fact: 
+   f5_ha_status: "{% set l = [] %}{% for dg in facts['device_groups']%}{% if (dg['devices'] | length) < 2 %}{{ l.append('standalone') }}{% else %}{{ l.append('cluster') }}{% endif %}{% endfor %}{% if 'cluster' in l %}cluster{% else %}standalone{% endif %}"
+
+- name: Set f5_failover_state fact
+  set_fact:
+   f5_failover_state: "{{ facts['devices'][0]['failover_state'] }}"
+
+- name: Set f5_device_groups fact
+  set_fact: 
+   f5_device_groups: "{% set l = [] %}{% for dg in facts['device_groups']%}{{ l.append(dg['name']) }}{% endfor %}{{ l }}"
+
