@@ -1,6 +1,6 @@
 galaxy_info:
   author: Jimmy Casse
-  description: Network and Security consultant
+  description: Ansible gathering F5 bigip HA information
   company: J-SEC
 
   license: license BSD
