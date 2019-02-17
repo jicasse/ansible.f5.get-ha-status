@@ -1,6 +1,4 @@
 ---
-# tasks file for ansible.f5.get-ha-status
-
 - name: Gather BIGIP facts
   bigip_device_facts:
    gather_subset: 
@@ -25,4 +23,3 @@
 - name: Set f5_device_groups fact
   set_fact: 
    f5_device_groups: "{% set l = [] %}{% for dg in facts['device_groups']%}{{ l.append(dg['name']) }}{% endfor %}{{ l }}"
-

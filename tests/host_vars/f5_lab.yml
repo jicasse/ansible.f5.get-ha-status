@@ -1,6 +1,4 @@
 ---
-
 f5_host: '1.1.1.1'
 f5_user: 'ansible'
 f5_passwd: 'password'
-

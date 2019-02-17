@@ -2,21 +2,16 @@ galaxy_info:
   author: Jimmy Casse
   description: Ansible gathering F5 bigip HA information
   company: J-SEC
-
   license: license BSD
-
   min_ansible_version: 2.7
-
   platforms:
    - name: BIGIP
      versions:
-     - 12.X
-
+     - 12
   galaxy_tags:
    - f5
    - bigip
    - network
    - security
    - ha
-
 dependencies: []
